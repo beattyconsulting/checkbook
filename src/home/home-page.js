@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-const base = 'register'
+const base = 'home-page'
 
-class App extends Component {
+export class HomePage extends Component {
 
   render () {
     return (
@@ -9,5 +9,3 @@ class App extends Component {
     )
   }
 }
-
-export default App

@@ -1,8 +1,10 @@
+const path = require('path')
+
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: '/',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'checkbook.js'
   },
   devServer: {
     inline: true,

@@ -1,8 +1,9 @@
 {
   "name": "checkbook",
-  "version": "1.54.0",
+  "version": "1.0.0",
   "description": "Beatty Checkbook App",
   "scripts": {
+    "build": "rm -rf dist && webpack --progress",
     "start": "webpack-dev-server --hot --inline --host 0.0.0.0",
     "start-node": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

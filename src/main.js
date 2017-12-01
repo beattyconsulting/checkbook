@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {createStore, compose, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import App from './app'
+import {HomePage} from './home/home-page'
 import css from './main.less'
-
 import reducers from './reducers';
 
 
@@ -38,4 +37,4 @@ if (module.hot) {
 	store = configureStore();
 }
 
-ReactDOM.render(<App />, document.getElementById('beatty'))
+ReactDOM.render(<HomePage />, document.getElementById('beatty'))
