@@ -1,10 +1,12 @@
 const path = require('path')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {'main': [path.resolve(__dirname, 'src/main.js')]},
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'checkbook.js'
+    publicPath: '/',
+    filename: 'main-[hash].js'
   },
   devServer: {
     inline: true,
@@ -22,5 +24,12 @@ module.exports = {
         loader:  'style-loader!css-loader!less-loader'
       }
     ]
-  }
+  },
+  plugins: [new HtmlWebpackPlugin({
+            chunks: ['main'],
+            template: './src/main.ejs',
+            hash: false,
+            inject: false,
+            filename: '../views/index.html'
+})]
 }

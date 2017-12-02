@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+    <div id="beatty"></div>
+    <% const chunks = htmlWebpackPlugin.files.chunks %>
+    <% for (const key in chunks) { %>
+        <% const entry = chunks[key].entry; %>
+        <script type="text/javascript" src="{js.dir}<%= entry %>"></script>
+    <% } %>
+</body>
+</html>
