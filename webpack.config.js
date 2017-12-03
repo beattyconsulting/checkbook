@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'main-[hash].js'
+    filename: 'js/main-[hash].js'
   },
   devServer: {
     inline: true,

@@ -10,7 +10,7 @@
     <% const chunks = htmlWebpackPlugin.files.chunks %>
     <% for (const key in chunks) { %>
         <% const entry = chunks[key].entry; %>
-        <script type="text/javascript" src="{js.dir}<%= entry %>"></script>
+        <script type="text/javascript" src="<%= entry %>"></script>
     <% } %>
 </body>
 </html>
