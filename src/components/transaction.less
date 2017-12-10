@@ -1,6 +1,30 @@
 .transaction {
-  &_label {
-    padding-right: 0.5rem;
+  &_title {
     font-weight: bold;
+    font-size: x-large;
+    border-bottom: 1px solid black;
+    margin-bottom: 1.5rem;
   }
+  &_label {
+    font-weight: bold;
+    &-date {
+      margin-right: 4rem;
+    }
+    &-amount {
+      margin-right: 2.5rem;
+    }
+    &-description {
+      margin-right: 1.1rem;
+    }
+    &-transaction {
+      margin-right: 1.0rem;
+    }
+    &-account {
+      margin-right: 2.5rem;
+    }
+  }
+  &_row {
+    margin-bottom: 1rem;
+  }
+
 }
