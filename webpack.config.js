@@ -1,12 +1,15 @@
 const path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+function envAwareConfig(env) {
+	const isProduction = env === 'production'
+
+return {
   entry: {'main': [path.resolve(__dirname, 'src/main.js')]},
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'js/main-[hash].js'
+    filename: isProduction ? 'js/checkbook-[hash].js' : 'checkbook.js'
   },
   devServer: {
     inline: true,
@@ -31,7 +34,7 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
             chunks: ['main'],
             externalScript: [
-                                "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js",
+                              'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
                             	'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js',
                             	'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js',
                             	'https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.5.10/prop-types.min.js',
@@ -45,4 +48,9 @@ module.exports = {
             filename: '../views/index.dust'
     })
   ]
+}
+}
+
+module.exports = function (env) {
+	return envAwareConfig(env)
 }

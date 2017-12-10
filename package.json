@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Beatty Checkbook App",
   "scripts": {
-    "build": "rm -rf dist views && webpack --progress",
-    "start": "webpack-dev-server --hot --inline --host 0.0.0.0",
-    "start-node": "node server.js",
+    "build": "rm -rf dist views && webpack --env production --progress",
+    "start": "webpack-dev-server --env development --hot --inline --host 0.0.0.0",
+    "start-node": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -49,6 +49,7 @@
     "body-parser": "1.17.1",
     "config": "1.25.1",
     "consolidate": "0.15.0",
+    "dustjs-linkedin": "2.7.5",
     "express": "4.14.1",
     "express-http-proxy": "1.0.7",
     "less": "2.7.2",
