@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-const base = 'dropdown'
 
 export class DropDown extends Component {
 
   render() {
-      return <select className={`${base}_select`}>
+      const {options = [], className = '', onChange} = this.props
+      return <select className={`${className}`} onChange={e => onChange(e)}>
                 {
-                 this.props.options.map(opt => {
+                 options.map(opt => {
                    const {
                      value,
                      label
@@ -25,5 +25,7 @@ export class DropDown extends Component {
 }
 
 DropDown.propTypes = {
-	options: PropTypes.array
+	options: PropTypes.array,
+	className: PropTypes.string,
+	onChange: PropTypes.func
 }

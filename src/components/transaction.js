@@ -19,9 +19,9 @@ export class Transaction extends Component {
 			  <div className={`${base}_title`}>Add Transaction</div>
 			  <div className={`${base}_row`}>
 			    <span className={`${base}_label ${base}_label-date`}>Date:</span>
-			    <DropDown options={months}/>
-			    <DropDown options={days}/>
-			    <DropDown options={years}/>
+			    <DropDown options={months} className={`${base}_month`} onChange={e => console.log('Month=' + e.target.value)}/>
+			    <DropDown options={days} className={`${base}_day`} onChange={e => console.log('Day=' + e.target.value)}/>
+			    <DropDown options={years} onChange={e => console.log('Year=' + e.target.value)}/>
 			  </div>
 			  <div className={`${base}_row`}>
 			    <span className={`${base}_label ${base}_label-amount`}>Amount:</span>
@@ -33,11 +33,11 @@ export class Transaction extends Component {
         </div>
         <div className={`${base}_row`}>
           <span className={`${base}_label ${base}_label-transaction`}>Transaction:</span>
-          <DropDown options={transactions}/>
+          <DropDown options={transactions} onChange={e => console.log('Transaction=' + e.target.value)}/>
         </div>
         <div className={`${base}_row`}>
            <span className={`${base}_label ${base}_label-account`}>Account:</span>
-           <DropDown options={accounts}/>
+           <DropDown options={accounts} onChange={e => console.log('Account=' + e.target.value)}/>
          </div>
 			</div>
 		);
