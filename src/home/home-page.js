@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Months} from '../components/months';
+import {Transaction} from '../components/transaction';
 
 const base = 'home-page'
 
@@ -8,7 +8,7 @@ export class HomePage extends Component {
   render () {
     return (
       <div className={`${base}`}>
-        <Months />
+        <Transaction />
       </div>
     )
   }
