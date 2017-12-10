@@ -6,6 +6,6 @@
 </head>
 <body>
 <div id="beatty"></div>
-<script src="./checkbook.js"></script>
+<script src="./main.js"></script>
 </body>
 </html>

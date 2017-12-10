@@ -1,11 +1,15 @@
 const express = require('express')
+const cons = require('consolidate')
 const app = express()
-const path = require("path");
+const path = require("path")
 
 app.use(express.static('dist'));
+app.engine('dust', cons.dust)
+app.set('views', path.resolve(__dirname, './views'))
+app.set('view engine', 'dust')
 
 app.get('/checkbook',(req,res) => {
-  res.sendFile(path.join(__dirname + '/views/index.html'));
+  res.render('index');
 })
 
 app.listen(3000, () => {

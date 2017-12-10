@@ -7,6 +7,10 @@
 </head>
 <body>
     <div id="beatty"></div>
+    <% const scripts = htmlWebpackPlugin.options.externalScript; %>
+        <% scripts.forEach(function(script) { %>
+            <script src="<%= script %>"></script>
+        <% })%>
     <% const chunks = htmlWebpackPlugin.files.chunks %>
     <% for (const key in chunks) { %>
         <% const entry = chunks[key].entry; %>
