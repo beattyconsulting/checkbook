@@ -5,9 +5,6 @@ const base = 'home-page'
 
 export class HomePage extends Component {
 
-componentWillMount() {
-  document.body.style.backgroundColor = '#f9feff'
-}
   render () {
     return (
       <div className={`${base}`}>
