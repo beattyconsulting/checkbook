@@ -26,8 +26,15 @@ return {
             options: {cacheDirectory: true}
         }
       },
-      { test: /\.(css|less)$/,
+      {
+        test: /\.(css|less)$/,
         loader:  'style-loader!css-loader!less-loader'
+      },
+      {
+        test: /\.(woff|woff2|ttf|svg|png|jpg|jpeg|eot)$/,
+        use: {
+        	loader: 'url-loader'
+        }
       }
     ]
   },

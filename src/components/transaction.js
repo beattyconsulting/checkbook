@@ -18,27 +18,28 @@ export class Transaction extends Component {
 			<div className={`${base}`}>
 			  <div className={`${base}_title`}>Add Transaction</div>
 			  <div className={`${base}_row`}>
-			    <span className={`${base}_label ${base}_label-date`}>Date:</span>
-			    <DropDown options={months} className={`${base}_month`} onChange={e => console.log('Month=' + e.target.value)}/>
-			    <DropDown options={days} className={`${base}_day`} onChange={e => console.log('Day=' + e.target.value)}/>
-			    <DropDown options={years} onChange={e => console.log('Year=' + e.target.value)}/>
+          <span className={`${base}_label ${base}_label-date`}>Date:</span>
+			    <DropDown options={months} className={`${base}_select`} onChange={e => console.log('Month=' + e.target.value)}/>
+			    <DropDown options={days} className={`${base}_select ${base}_select_day`} onChange={e => console.log('Day=' + e.target.value)}/>
+			    <DropDown options={years} className={`${base}_select ${base}_select_year`} onChange={e => console.log('Year=' + e.target.value)}/>
 			  </div>
 			  <div className={`${base}_row`}>
 			    <span className={`${base}_label ${base}_label-amount`}>Amount:</span>
-			    <input type="text" name="amount"/>
+			    <input className={`${base}_input`} type="text" name="amount"/>
 			  </div>
 			  <div className={`${base}_row`}>
           <span className={`${base}_label ${base}_label-description`}>Description:</span>
-          <input type="text" name="description"/>
+          <input className={`${base}_input`} type="text" name="description"/>
         </div>
         <div className={`${base}_row`}>
-          <span className={`${base}_label ${base}_label-transaction`}>Transaction:</span>
-          <DropDown options={transactions} onChange={e => console.log('Transaction=' + e.target.value)}/>
+          <span className={`${base}_label`}>Transaction:</span>
+          <DropDown className={`${base}_select ${base}_select_wide`}options={transactions} onChange={e => console.log('Transaction=' + e.target.value)}/>
         </div>
         <div className={`${base}_row`}>
-           <span className={`${base}_label ${base}_label-account`}>Account:</span>
-           <DropDown options={accounts} onChange={e => console.log('Account=' + e.target.value)}/>
-         </div>
+           <span className={`${base}_label`}>Account:</span>
+           <DropDown className={`${base}_select ${base}_select_wide`} options={accounts} onChange={e => console.log('Account=' + e.target.value)}/>
+        </div>
+        <button className={`${base}_button`} onClick={e => console.log('Add Transaction')}>Add Transaction</button>
 			</div>
 		);
 	}

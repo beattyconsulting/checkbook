@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import {HomePage} from './home/home-page'
 import css from './main.less'
 import reducers from './reducers';
+import Media from 'react-media'
 
 
 const getInitialState = () => {
@@ -37,4 +38,17 @@ if (module.hot) {
 	store = configureStore();
 }
 
-ReactDOM.render(<HomePage />, document.getElementById('beatty'))
+ReactDOM.render(
+   <div>
+      <Media query="(max-width: 599px)">
+            {matches => matches ? (
+            <div className='checkbook-small'>
+               <HomePage />
+            </div>
+            ) : (
+            <HomePage />
+            )}
+      </Media>
+   </div>,
+    document.getElementById('beatty')
+)
