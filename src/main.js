@@ -2,10 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {applyMiddleware, compose, createStore} from 'redux';
 import thunk from 'redux-thunk';
-import {HomePage} from './home/home-page'
+import {ConnectedHomePage} from './home/home-page'
 import reducers from './reducers';
 import Media from 'react-media'
 import './main.less'
+import Provider from "react-redux/es/components/Provider"
 
 
 const getInitialState = () => {
@@ -39,16 +40,16 @@ if (module.hot) {
 }
 
 ReactDOM.render(
-    <div>
+    <Provider store={store}>
         <Media query="(max-width: 599px)">
             {matches => matches ? (
                 <div className='checkbook-small'>
-                    <HomePage/>
+                    <ConnectedHomePage/>
                 </div>
             ) : (
-                <HomePage/>
+                <ConnectedHomePage/>
             )}
         </Media>
-    </div>,
+    </Provider>,
     document.getElementById('beatty')
 )
