@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {applyMiddleware, compose, createStore} from 'redux';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 import Media from 'react-media'
 import './main.less'
 import {Provider} from 'react-redux'
-import {AppRoutes} from "../app-routes"
+import {ConnectedMainLayout} from "./main-layout"
 
 
 const getInitialState = () => {
@@ -44,13 +44,11 @@ ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter basename='/'>
             <Media query="(max-width: 599px)">
-                {matches => matches ? (
-                    <div className='checkbook-small'>
-                        <AppRoutes/>
-                    </div>
-                ) : (
-                    <div>
-                        <AppRoutes/>
+                {matches => (
+                    <div className={matches ? 'checkbook-small' : ''}>
+                        <Switch>
+                            <Route path="*" component={ConnectedMainLayout}/>
+                        </Switch>
                     </div>
                 )}
             </Media>
