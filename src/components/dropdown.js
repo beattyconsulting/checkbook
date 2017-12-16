@@ -5,7 +5,7 @@ export class DropDown extends Component {
 
     render() {
         const {options = [], className = '', onChange} = this.props
-        return <select className={`${className}`} onChange={e => onChange(e)}>
+        return <select className={`${className}`} onChange={e => onChange(e.target.value)}>
             {
                 options.map(opt => {
                     const {
