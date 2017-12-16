@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import {Transaction} from '../components/transaction';
 
 const base = 'home-page'

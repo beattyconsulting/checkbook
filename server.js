@@ -8,8 +8,8 @@ app.engine('dust', cons.dust)
 app.set('views', path.resolve(__dirname, './views'))
 app.set('view engine', 'dust')
 
-app.get('/checkbook',(req,res) => {
-  res.render('index');
+app.get('/checkbook', (req, res) => {
+    res.render('index');
 })
 
 app.listen(3000, () => {
