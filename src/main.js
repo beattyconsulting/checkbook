@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {applyMiddleware, compose, createStore} from 'redux';
+import {BrowserRouter} from 'react-router-dom'
 import thunk from 'redux-thunk';
-import {ConnectedHomePage} from './home/home-page'
 import reducers from './reducers';
 import Media from 'react-media'
 import './main.less'
-import Provider from "react-redux/es/components/Provider"
+import {Provider} from 'react-redux'
+import {AppRoutes} from "../app-routes"
 
 
 const getInitialState = () => {
@@ -41,15 +42,19 @@ if (module.hot) {
 
 ReactDOM.render(
     <Provider store={store}>
-        <Media query="(max-width: 599px)">
-            {matches => matches ? (
-                <div className='checkbook-small'>
-                    <ConnectedHomePage/>
-                </div>
-            ) : (
-                <ConnectedHomePage/>
-            )}
-        </Media>
+        <BrowserRouter basename='/'>
+            <Media query="(max-width: 599px)">
+                {matches => matches ? (
+                    <div className='checkbook-small'>
+                        <AppRoutes/>
+                    </div>
+                ) : (
+                    <div>
+                        <AppRoutes/>
+                    </div>
+                )}
+            </Media>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('beatty')
 )
