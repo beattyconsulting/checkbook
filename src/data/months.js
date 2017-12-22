@@ -1,15 +1,15 @@
 exports.data =
     [
-        {value: 'Jan', label: 'Jan'},
-        {value: 'Feb', label: 'Feb'},
-        {value: 'Mar', label: 'Mar'},
-        {value: 'Apr', label: 'Apr'},
-        {value: 'May', label: 'May'},
-        {value: 'June', label: 'June'},
-        {value: 'July', label: 'July'},
-        {value: 'Aug', label: 'Aug'},
-        {value: 'Sept', label: 'Sept'},
-        {value: 'Oct', label: 'Oct'},
-        {value: 'Nov', label: 'Nov'},
-        {value: 'Dec', label: 'Dec'}
+        {value: 1, label: 'Jan'},
+        {value: 2, label: 'Feb'},
+        {value: 3, label: 'Mar'},
+        {value: 4, label: 'Apr'},
+        {value: 5, label: 'May'},
+        {value: 6, label: 'June'},
+        {value: 7, label: 'July'},
+        {value: 8, label: 'Aug'},
+        {value: 9, label: 'Sept'},
+        {value: 10, label: 'Oct'},
+        {value: 11, label: 'Nov'},
+        {value: 12, label: 'Dec'}
     ]

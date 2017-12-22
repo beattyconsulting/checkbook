@@ -30,7 +30,6 @@ describe('DropDown', function () {
         expect(dropdown.find('option').at(1).text()).toEqual("2018")
         dropdown.find('option').at(0).simulate("change", {target : {value: "17"}})
         expect(props.onChange).toHaveBeenCalledTimes(1)
-        expect(props.onChange).toHaveBeenCalledWith("17")
     })
 
 })

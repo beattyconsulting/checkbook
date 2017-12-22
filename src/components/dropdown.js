@@ -23,7 +23,7 @@ export class DropDown extends Component {
             )
         })
 
-        return <select className={`${className}`} value={defaultValue} onChange={e => onChange(e.target.value)}>
+        return <select className={`${className}`} value={defaultValue} onChange={onChange}>
             {optionList.map(option => option)}
         </select>
     }

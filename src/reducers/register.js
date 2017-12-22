@@ -1,4 +1,4 @@
-import {GET_REGISTER_FAILURE, GET_REGISTER_SUCCESS} from '../actions';
+import * as Actions from '../common/actions';
 
 const defaultState = {
     available: false
@@ -6,9 +6,9 @@ const defaultState = {
 
 export function registerReducer(state = defaultState, action) {
     switch (action.type) {
-        case GET_REGISTER_SUCCESS:
+        case Actions.GET_REGISTER_SUCCESS:
             return {...state};
-        case GET_REGISTER_FAILURE:
+        case Actions.GET_REGISTER_FAILURE:
             return {...state};
         default:
             return state;

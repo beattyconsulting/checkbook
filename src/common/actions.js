@@ -1,0 +1,11 @@
+export const GET_REGISTER = 'GET_REGISTER';
+export const GET_REGISTER_SUCCESS = 'GET_REGISTER_SUCCESS';
+export const GET_REGISTER_FAILURE = 'GET_REGISTER_FAILURE';
+
+export const SET_MONTH = "SET_MONTH"
+export const SET_DAY = "SET_DAY"
+export const SET_YEAR = "SET_YEAR"
+export const SET_AMOUNT = "SET_AMOUNT"
+export const SET_DESCRIPTION = "SET_DESCRIPTION"
+export const SET_TRANSACTION = "SET_TRANSACTION"
+export const SET_ACCOUNT = "SET_ACCOUNT"
