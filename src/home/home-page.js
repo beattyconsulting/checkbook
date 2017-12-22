@@ -7,14 +7,18 @@ const base = 'home-page'
 export class HomePage extends Component {
     render() {
         return (
-            <div className={`${base}`}><Transaction/></div>
+            <div className={`${base}`}><Transaction transaction={this.props.transaction}/></div>
         )
     }
 }
 
-HomePage.propTypes = {}
+HomePage.propTypes = {
+    transaction: PropTypes.object
+}
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+    transaction : state.transaction
+})
 
 const mapDispatchToProps = (dispatch) => ({})
 

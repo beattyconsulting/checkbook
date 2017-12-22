@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import {DropDown} from './dropdown'
 
 const MonthValues = require('../data/months');
@@ -10,9 +11,11 @@ const base = 'transaction'
 
 export class Transaction extends Component {
     render() {
-        const months = MonthValues['data'];
-        const days = DayValues['data'];
-        const years = YearValues['data'];
+        const {month, day, year} = this.props.transaction
+        const months = getMonths(month)
+        const days = getDays(day)
+        const years = getYears(year)
+
         const transactions = TransactionTypes['data'];
         const accounts = AccountTypes['data'];
         return (
@@ -50,4 +53,31 @@ export class Transaction extends Component {
             </div>
         );
     }
+}
+
+export const getDays = (currentDay) => {
+    const days = DayValues['data'];
+    days[currentDay-1].selected = true
+    return days
+}
+
+export const getMonths = (currentMonth) => {
+    const months = MonthValues['data'];
+    months[currentMonth-1].selected = true
+    return months
+}
+
+export const getYears = (currentYear) => {
+    const years = YearValues['data'];
+    const yearIndex = years.findIndex(
+        function (entry) {
+            return entry.value === currentYear
+        }
+    )
+    years[yearIndex].selected = true
+    return years
+}
+
+Transaction.propTypes = {
+    transaction: PropTypes.object
 }
