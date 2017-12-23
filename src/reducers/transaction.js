@@ -1,4 +1,4 @@
-import * as Actions from '../common/actions';
+import * as Actions from '../actions/action-types';
 import * as Constants from '../common/constants'
 
 import moment from "moment"

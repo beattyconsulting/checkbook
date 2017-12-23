@@ -1,4 +1,4 @@
-import * as Actions from '../common/actions';
+import * as Actions from '../actions/action-types';
 
 const defaultState = {
     available: false
