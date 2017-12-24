@@ -2,14 +2,15 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 import {ConnectedHomePage} from './home/home-page'
+import {ConnectedTransactionPage} from "./transaction/transaction-page"
 
 export class MainLayout extends Component {
 
     render() {
         return (
             <Switch>
-                <Route path="/checkbook" component={ConnectedHomePage}/>
-                <Route path="*" component={ConnectedHomePage}/>
+                <Route path="/transaction" component={ConnectedTransactionPage}/>
+                <Route path="/*" component={ConnectedHomePage}/>
             </Switch>
         )
     }

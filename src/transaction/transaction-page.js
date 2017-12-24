@@ -3,11 +3,10 @@ import {connect} from 'react-redux'
 import {Transaction} from '../components/transaction';
 import {setAccount, setAmount, setDay, setDescription, setMonth, setTransaction, setYear} from "../actions/transaction"
 import {MainMenu} from "../components/main-menu"
-import {Register} from "../components/register"
 
-const base = 'home-page'
+const base = 'transaction-page'
 
-export class HomePage extends Component {
+export class TransactionPage extends Component {
     render() {
         return (
             <div className={`${base}`}>
@@ -22,13 +21,12 @@ export class HomePage extends Component {
                     setYear={this.props.setYear}
                     setTransaction={this.props.setTransaction}
                 />
-                <Register />
             </div>
         )
     }
 }
 
-HomePage.propTypes = {}
+TransactionPage.propTypes = {}
 
 
 const mapStateToProps = state => ({
@@ -45,4 +43,4 @@ const mapDispatchToProps = (dispatch) => ({
     setTransaction: transaction => dispatch(setTransaction(transaction))
 })
 
-export const ConnectedHomePage = connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export const ConnectedTransactionPage = connect(mapStateToProps, mapDispatchToProps)(TransactionPage)
