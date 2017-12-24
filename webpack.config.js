@@ -1,5 +1,6 @@
 const path = require('path')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function envAwareConfig(env) {
     const isProduction = env === 'production'
@@ -38,12 +39,14 @@ function envAwareConfig(env) {
                 }
             ]
         },
-        plugins: [new HtmlWebpackPlugin({
+        plugins: [
+            new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
+            new HtmlWebpackPlugin({
             chunks: ['main'],
             externalScript: [
                 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js',
+                'https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js',
+                'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js',
                 'https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.5.10/prop-types.min.js',
                 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.5/react-redux.min.js',
                 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js',
