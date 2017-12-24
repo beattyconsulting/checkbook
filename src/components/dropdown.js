@@ -1,21 +1,17 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+const base = 'dropdown'
 
 export class DropDown extends Component {
 
     render() {
         const {options = [], className = '', onChange, selectedValue} = this.props
 
-        let defaultValue
         let optionList = options.map(opt => {
             const {
                 value,
-                label,
-                selected
+                label
             } = opt
-            if (selected) {
-                defaultValue = value
-            }
             return (
                 <option key={value} value={value}>
                     {label}
@@ -23,9 +19,11 @@ export class DropDown extends Component {
             )
         })
 
-        return <select className={`${className}`} value={selectedValue} onChange={onChange}>
-            {optionList.map(option => option)}
-        </select>
+        return <span className={`${base}`}>
+            <select className={`${className}`} value={selectedValue} onChange={onChange}>
+                {optionList.map(option => option)}
+            </select>
+        </span>
     }
 }
 

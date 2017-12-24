@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {DropDown} from './dropdown'
-import {setDescription} from "../actions/transaction"
 
 const MonthValues = require('../data/months');
 const DayValues = require('../data/days');
