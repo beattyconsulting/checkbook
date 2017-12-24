@@ -8,7 +8,7 @@ app.engine('dust', cons.dust)
 app.set('views', path.resolve(__dirname, './views'))
 app.set('view engine', 'dust')
 
-app.get('/checkbook', (req, res) => {
+app.get('/*', (req, res) => {
     res.render('index');
 })
 
